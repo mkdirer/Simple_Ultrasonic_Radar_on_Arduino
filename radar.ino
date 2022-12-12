@@ -3,7 +3,7 @@
 
 #define STEP_COUNT 32
 
-Stepper stepper(STEP_COUNT, 8, 10, 9, 11); 
+Stepper stepper(STEP_COUNT, 8, 10, 9, 11);
 
 // Defines Tirg and Echo pins of the Ultrasonic Sensor
 const int trigPin = 3;
@@ -21,7 +21,7 @@ void setup() {
   stepper.setSpeed(300);
 }
 
-//komnedy: zczytuj ciągle, wyłącz wyłacz/odczyt (samo obracanie), wyłacz ciągły odczyt ciągle obracanie w przedziale 15 do 165 stopni, obróc w prawo 90 stopni, obróc w lewo o -90 stopni wraz z odczytem.  
+//komnedy: zczytuj ciągle, wyłącz wyłacz/odczyt (samo obracanie), wyłacz ciągły odczyt ciągle obracanie w przedziale 15 do 165 stopni, obróc w prawo 90 stopni, obróc w lewo o -90 stopni wraz z odczytem.
 
 void loop() {
   if(Serial.available()){
@@ -40,20 +40,18 @@ void loop() {
       int exit = 0;
       while(check_angle <= angle){
         stepper.step(step);
-        Serial.println(check_angle); 
-        Serial.println(calculateDistance());
+        Serial.println(String(check_angle) + "," + calculateDistance());
         if(Serial.available()){
           exit = 1;
           break;
-        }  
+        }
         check_angle += step;
-      } 
+      }
       check_angle = angle;
       if(exit == 1){ break; }
       while (check_angle >= 0){
         stepper.step(-step);
-        Serial.println(check_angle); 
-        Serial.println(calculateDistance());
+        Serial.println(String(check_angle) + "," + calculateDistance());
         if(Serial.available()){
           exit = 1;
           break;
