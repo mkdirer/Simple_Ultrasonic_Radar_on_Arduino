@@ -14,3 +14,9 @@ The main goal of our project was to scan the terrain using ultrasonic waves and 
 - Python (pyserial, threading, matplotlib, numpy, Ipython, and PySimpleGUI libraries)
 
 The control of ROHS motor rotation and ultrasonic distance measurement were implemented in ArduinoIDE. Then, the angle and distance to the nearest object were added to the code. A Python program was written to receive data streamed from Arduino and continuously plot it using Python libraries. It also has the ability to save data in a txt file (in the format of angle: distance) or capture a radar image in png format.
+
+![image](https://user-images.githubusercontent.com/83553257/225794018-4d863445-28a2-4ad5-a5fd-7d2882b2da66.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/83553257/225794063-2158d400-1641-48a2-a257-0190948e1845.png" width="15%" height="15%">
+  <img src="https://user-images.githubusercontent.com/83553257/225794080-23ec59d5-8d32-4b40-b6e6-77700191b083.png" width="80%" height="80%">
+</p>
